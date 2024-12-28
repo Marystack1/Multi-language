@@ -3,7 +3,7 @@ from tkinter import Tk, Entry, Button, Label, StringVar
 
 # Creating a window
 window = Tk()
-window.geometry("300x150")  # Set dimensions for better appearance
+window.geometry("300x150")  
 window.title("French Dictionary")
 
 entry_text = Entry(window)
