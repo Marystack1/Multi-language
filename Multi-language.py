@@ -41,6 +41,30 @@ Spanish_dictionary =  { "hola" : "hello",
                        "si":"yes",
                        "no":"no"}
 
+French_Dictionary = {
+    "Viens": "Come",
+    "Aller": "Go",
+    "Bonjour": "Good morning",
+    "Salut": "Hello",
+    "Au revoir": "Goodbye",
+    "Merci": "Thank you",
+    "Merci beaucoup": "Thank you very much",
+    "Pardon": "Excuse me",
+    "Monsieur": "Mister",
+    "Madame": "Madam",
+    "Mademoiselle": "Miss",
+    "Bon": "Good",
+    "Grande": "Big",
+    "Petit": "Small",
+    "Un Garcon": "A Boy",
+    "Une Fille": "A Girl",
+    "Maison": "House",
+    "Lecole": "School",
+    "Voiture": "Car",
+    "Beau": "Beautiful",
+    "Travail": "Work"
+}
+
 def search(word):
     if word in Spanish_dictionary:
         result.set(Spanish_dictionary[word])
