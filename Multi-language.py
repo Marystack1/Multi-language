@@ -7,7 +7,7 @@ window = Tk()
 #width and length of window.
 window.geometry("600x400")
 
-window.title("Spanish_dictionary")
+window.title("Multi-language Dictionary")
 
 
 
@@ -21,25 +21,25 @@ result_label=Label(window,textvariable=result)
 result_label.pack()
 
 
-Spanish_dictionary =  { "hola" : "hello",
-                       "adios" : "goodbye",
-                       "gracias" : "thankyou",
-                       "lo siento": "excuse me/sorry",
-                       "como estas?" : "how are you",
-                       "estoy bien" : "i am fine",
-                       "agua": "water",
-                       "comida" : "food",
-                       "casa" : "house",
-                       "coche" : "car",
-                       "amigo" : "friend",
-                       "familia" : "family",
-                       "amor": "love",
-                       "feliz": "happy",
-                       "triste":"sad",
-                       "verdad":"true",
-                       "falso":"false",
-                       "si":"yes",
-                       "no":"no"}
+Spanish_dictionary =  { "Hola" : "Hello",
+                       "Adios" : "Goodbye",
+                       "Gracias" : "Thankyou",
+                       "Lo siento": "Excuse me/Sorry",
+                       "Como estas?" : "How are you",
+                       "Estoy bien" : "I am fine",
+                       "Agua": "Water",
+                       "Comida" : "Food",
+                       "Casa" : "House",
+                       "Coche" : "Car",
+                       "Amigo" : "Friend",
+                       "Familia" : "Family",
+                       "Amor": "Love",
+                       "Feliz": "Happy",
+                       "Triste":"Sad",
+                       "Verdad":"True",
+                       "Falso":"False",
+                       "Si":"Yes",
+                       "No":"No"}
 
 French_Dictionary = {
     "Viens": "Come",
@@ -70,10 +70,19 @@ def search(word):
         result.set(Spanish_dictionary[word])
         print(Spanish_dictionary[word])
 
+    else:
+        result.set("Not found")
+        print("Not found")
+
+def search(word):
+    if word in French_Dictionary:
+        result.set(French_Dictionary[word])
+        print(French_Dictionary[word])
 
     else:
         result.set("Not found")
         print("Not found")
+
 
 search_btn =Button(window,text = "search", command=lambda:search(entry_text.get()))
 search_btn.pack()
