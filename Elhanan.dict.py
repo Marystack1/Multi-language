@@ -34,7 +34,7 @@ French_Dictionary = {
     "Lecole": "School",
     "Voiture": "Car",
     "Beau": "Beautiful",
-    "work": "Travail"
+    "Travail": "Work"
 }
 
 def search(word):
