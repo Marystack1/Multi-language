@@ -62,14 +62,6 @@ Hausa_dictionary = {"Zo" "Come",
                     "Hanya" "Road",
                     "Karshe" "Last",
                    }
-def search(word):
-    if word in Hausa_dictionary:
-        result.set(Hausa_dictionary[word])
-        print(Hausa_dictionary[word])
-
-    else:
-        result.set("Not found")
-        print("Not found")
 
 French_Dictionary = {
     "Viens": "Come",
@@ -94,6 +86,15 @@ French_Dictionary = {
     "Beau": "Beautiful",
     "Travail": "Work"
 }
+
+def search(word):
+    if word in Hausa_dictionary:
+        result.set(Hausa_dictionary[word])
+        print(Hausa_dictionary[word])
+
+    else:
+        result.set("Not found")
+        print("Not found")
 
 def search(word):
     if word in Spanish_dictionary:
