@@ -41,6 +41,36 @@ Spanish_dictionary =  { "Hola" : "Hello",
                        "Si":"Yes",
                        "No":"No"}
 
+Hausa_dictionary = {"Zo" "Come",
+                    "Baya" "Back",
+                    "Je" "Go",
+                    "Kalma" "Word",
+                    "Kai" "Head",
+                    "Hanu" "Hand",
+                    "Litafi" "Bible",
+                    "Mama" "Father",
+                    "Woya""Phone",
+                    "Daki" "Room",
+                    "Waka" "Song",
+                    "Suna" "Name",
+                    "Dan Uwa" "Brother",
+                    "Yar Uwa" "Sister",
+                    "Wuta" "Light",
+                    "Dama" "Right",
+                    "Hagu" "Left",
+                    "Mota" "Car",
+                    "Hanya" "Road",
+                    "Karshe" "Last",
+                   }
+def search(word):
+    if word in Hausa_dictionary:
+        result.set(Hausa_dictionary[word])
+        print(Hausa_dictionary[word])
+
+    else:
+        result.set("Not found")
+        print("Not found")
+
 French_Dictionary = {
     "Viens": "Come",
     "Aller": "Go",
