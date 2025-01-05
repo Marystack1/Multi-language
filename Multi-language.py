@@ -84,7 +84,12 @@ def search(word):
         print("Not found")
 
 
-search_btn =Button(window,text = "search", command=lambda:search(entry_text.get()))
-search_btn.pack()
+spanish_btn =Button(window,text = "spanish", command=lambda:search(entry_text.get()))
+spanish_btn.pack()
+
+french_btn = Button(window , text = "french", command=lambda: search(entry_text.get()))
+french_btn.pack()
+
+
 window.mainloop()
 
