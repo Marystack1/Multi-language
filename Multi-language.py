@@ -121,6 +121,9 @@ spanish_btn.pack()
 french_btn = Button(window , text = "french", command=lambda: search(entry_text.get()))
 french_btn.pack()
 
+hausa_btn = Button(window, text = "hausa", command = lambda : search(entry_text.get()))
+hausa_btn.pack()
+
 
 window.mainloop()
 
