@@ -1,4 +1,6 @@
+from re import search
 from tkinter import Tk,Entry,Button,Label,StringVar
+
 
 #creating a window
 
@@ -10,119 +12,44 @@ window.geometry("600x400")
 window.title("Multi-language Dictionary")
 
 
-
-entry_text =Entry(window)
-
-entry_text.pack()
-
-
+# To hold the text that will be displayed
 result = StringVar()
-result_label=Label(window,textvariable=result)
+result_label=Label(window,textvariable=result,font=("Arial",14))
 result_label.pack()
 
-
-Spanish_dictionary =  { "Hello" : "Hola",
-                       "Goodbye" : "Adios",
-                       "Thankyou" : "Gracias",
-                       "Excuse me/Sorry": "Lo siento",
-                       "How are you?" : "Como estas?",
-                       "I am fine" : "Estoy bien",
-                       "Water": "Agua",
-                       "Food" : "Comida",
-                       "House" : "Casa",
-                       "Car" : "Coche",
-                       "Friend" : "Amigo",
-                       "Family" : "Familia",
-                       "Love": "Amor",
-                       "Happy": "Feliz",
-                       "Sad":"Triste",
-                       "True":"Verdad",
-                       "False":"Falso",
-                       "Yes":"Si",
-                       "No":"No"}
-
-Hausa_dictionary = {"Zo" "Come",
-                    "Baya" "Back",
-                    "Je" "Go",
-                    "Kalma" "Word",
-                    "Kai" "Head",
-                    "Hanu" "Hand",
-                    "Litafi" "Bible",
-                    "Mama" "Father",
-                    "Woya""Phone",
-                    "Daki" "Room",
-                    "Waka" "Song",
-                    "Suna" "Name",
-                    "Dan Uwa" "Brother",
-                    "Yar Uwa" "Sister",
-                    "Wuta" "Light",
-                    "Dama" "Right",
-                    "Hagu" "Left",
-                    "Mota" "Car",
-                    "Hanya" "Road",
-                    "Karshe" "Last",
-                   }
-
-French_Dictionary = {
-    "Come": "Viens",
-    "Go": "Aller",
-    "Good morning": "Bonjour",
-    "Hello": "Salut",
-    "Good bye": "Au revior",
-    "Thankyou": "Merci",
-    "Thank you very much": "Merci beaucoup",
-    "Excuse me": "Pardon",
-    "Mister": "Monsieur",
-    "Madam": "Madame",
-    "Miss": "Mademoiselle",
-    "Good": "Bon",
-    "Big": "Grande",
-    "Small": "Petit",
-    "A boy": "Un Garcon",
-    "A girl": "Une Fille",
-    "House": "Maison",
-    "School": "Lecole",
-    "Car": "Voiture",
-    "Beautiful": "Beau",
-    "Work": "Travail"
+Translations = {
+    "Hello":{"Spanish": "Hola",
+             "French":"Bonjour",
+             "Hausa": "Sannu",
+             "Korean":"Hello",
+             "Japanese":"Konnichiwa"
+             },
+    "Thankyou":{"Spanish":"Gracias",
+                "French":"Merci",
+                "Hausa":"Nagode",
+                "Korean":"Gamsahamnida",
+                "Japanese":"Arigatou",
+                },
 }
 
-def search(word):
-    if word in Hausa_dictionary:
-        result.set(Hausa_dictionary[word])
-        print(Hausa_dictionary[word])
+Label(window, text="Enter a word:").pack()
+input_entry = Entry(window)
+input_entry.pack()
 
+def show_translations():
+    """"
+    Fetches the translations of the input word from the dictionary and displays them.
+   """
+    word = input_entry.get().capitalize()
+    if word in Translations:
+        translations = Translations[word]
+        result.set("\n".join([f"{lang}: {trans}" for lang, trans in translations.items()]))
     else:
-        result.set("Not found")
-        print("Not found")
+        result.set("Word not found in dictionary")
 
-def search(word):
-    if word in Spanish_dictionary:
-        result.set(Spanish_dictionary[word])
-        print(Spanish_dictionary[word])
+Button(window, text="Show Translations", command=show_translations).pack()
+window.mainloop()
 
-    else:
-        result.set("Not found")
-        print("Not found")
-
-def search(word):
-    if word in French_Dictionary:
-        result.set(French_Dictionary[word])
-        print(French_Dictionary[word])
-
-    else:
-        result.set("Not found")
-        print("Not found")
-
-
-spanish_btn =Button(window,text = "spanish", command=lambda:search(entry_text.get()))
-spanish_btn.pack()
-
-french_btn = Button(window , text = "french", command=lambda: search(entry_text.get()))
-french_btn.pack()
-
-hausa_btn = Button(window, text = "hausa", command = lambda : search(entry_text.get()))
-hausa_btn.pack()
 
 
 window.mainloop()
