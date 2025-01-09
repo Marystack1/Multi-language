@@ -30,6 +30,53 @@ Translations = {
                 "Korean":"Gamsahamnida",
                 "Japanese":"Arigatou",
                 },
+    "Goodbye":{"Spanish":"Adios",
+           "French":"Au revoir",
+           "Hausa":"Sai an juma",
+           "Korean":"",
+           "Japanese":"Sayonara",
+           }
+"Yas":{"Spanish":"Si",
+       "French":"Oui",
+       "Hausa":"Na",
+       "Korean":"Ne",
+       "Japanese":"Hai",
+      }
+"No":{"Spanish":"No",
+      "French":"Non",
+      "Hausa":"A'a",
+      "Korean":"Aniyo",
+      "Japanese":"Ije",
+      }
+"Excuse me":{"Spanish":"Lo siento",
+             "French":"Excusez-moi",
+             "Hausa":"Gafara",
+             "Korean":"Joheunhamnida",
+             "Japanese":"Sumimasen",
+             }
+"Tree":{"Spanish":"Arbol",
+        "French":"Arbre",
+        "Hausa":"Bishiya",
+        "Korean":"Namu",
+        "Japanese":"Ki",
+         }
+"Cat":{"Spanish":"Gato",
+       "French":"Chat",
+       "Hausa":"Muskule",
+       "Korean":"Goyang-i",
+       }
+"Dog":{"Spanish":"Peru",
+       "Ffench":"Chien",
+       "Hausa":"Kare",
+       "Korean":"Gae",
+       "Japanese":"Inu",
+       }
+"Sun":{"Spanish":"sol",
+       "French":"Soliel",
+       "Hausa":"Rana",
+       "Korean":"Taeyang",
+       "Japanese":"Taiyo",},
+
 }
 
 Label(window, text="Enter a word:").pack()
