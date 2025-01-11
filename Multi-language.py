@@ -19,7 +19,7 @@ result_label.pack()
 
 Translations = {
     "Hello":{"Spanish": "Hola",
-             "French":"Bonjour",
+             "French":"Salut",
              "Hausa": "Sannu",
              "Korean":"Hello",
              "Japanese":"Konnichiwa"
@@ -33,12 +33,12 @@ Translations = {
     "Goodbye":{"Spanish":"Adios",
            "French":"Au revoir",
            "Hausa":"Sai an juma",
-           "Korean":"",
+           "Korean":"annyeonghi gaseyo",
            "Japanese":"Sayonara",
            }
 "Yas":{"Spanish":"Si",
        "French":"Oui",
-       "Hausa":"Na",
+       "Hausa":"Iya",
        "Korean":"Ne",
        "Japanese":"Hai",
       }
