@@ -36,7 +36,7 @@ Translations = {
            "Korean":"annyeonghi gaseyo",
            "Japanese":"Sayonara",
            }
-"Yas":{"Spanish":"Si",
+"Yes":{"Spanish":"Si",
        "French":"Oui",
        "Hausa":"Iya",
        "Korean":"Ne",
