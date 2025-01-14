@@ -21,7 +21,7 @@ Translations = {
     "Hello":{"Spanish": "Hola",
              "French":"Salut",
              "Hausa": "Sannu",
-             "Korean":"Hello",
+             "Korean":"Annyeonghaseyo",
              "Japanese":"Konnichiwa"
              },
     "Thankyou":{"Spanish":"Gracias",
