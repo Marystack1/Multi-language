@@ -57,7 +57,7 @@ Translations = {
 "Tree":{"Spanish":"Arbol",
         "French":"Arbre",
         "Hausa":"Bishiya",
-        "Korean":"Namu",
+        "Korean":"namu",
         "Japanese":"Ki",
          }
 "Cat":{"Spanish":"Gato",
@@ -75,7 +75,8 @@ Translations = {
        "French":"Soliel",
        "Hausa":"Rana",
        "Korean":"Taeyang",
-       "Japanese":"Taiyo",},
+       "Japanese":"Taiyo",
+      }
 "Moon":{"Spanish":"Luna",
             "French":"Lune",
             "Hausa":"Wata",
