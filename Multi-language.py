@@ -136,6 +136,9 @@ Translations = {
              "Japanese":"Ie", }
 }
 
+Label(window, text="Enter a word:").pack()
+input_entry = Entry(window)
+input_entry.pack()
 
 def show_translations():
     """"
