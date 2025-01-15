@@ -156,6 +156,3 @@ Button(window, text="Show Translations", command=show_translations).pack()
 window.mainloop()
 
 
-
-window.mainloop()
-
