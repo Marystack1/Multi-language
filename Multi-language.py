@@ -38,7 +38,7 @@ Translations = {
            }
 "Yes":{"Spanish":"Si",
        "French":"Oui",
-       "Hausa":"Iya",
+       "Hausa":"A'a",
        "Korean":"Ne",
        "Japanese":"Hai",
       }
