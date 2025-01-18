@@ -1,4 +1,6 @@
+from re import search
 from tkinter import Tk,Entry,Button,Label,StringVar
+
 
 #creating a window
 
@@ -10,81 +12,147 @@ window.geometry("600x400")
 window.title("Multi-language Dictionary")
 
 
-
-entry_text =Entry(window)
-
-entry_text.pack()
-
-
+# To hold the text that will be displayed
 result = StringVar()
-result_label=Label(window,textvariable=result)
+result_label=Label(window,textvariable=result,font=("Arial",14))
 result_label.pack()
 
-
-Spanish_dictionary =  { "Hola" : "Hello",
-                       "Adios" : "Goodbye",
-                       "Gracias" : "Thankyou",
-                       "Lo siento": "Excuse me/Sorry",
-                       "Como estas?" : "How are you",
-                       "Estoy bien" : "I am fine",
-                       "Agua": "Water",
-                       "Comida" : "Food",
-                       "Casa" : "House",
-                       "Coche" : "Car",
-                       "Amigo" : "Friend",
-                       "Familia" : "Family",
-                       "Amor": "Love",
-                       "Feliz": "Happy",
-                       "Triste":"Sad",
-                       "Verdad":"True",
-                       "Falso":"False",
-                       "Si":"Yes",
-                       "No":"No"}
-
-French_Dictionary = {
-    "Viens": "Come",
-    "Aller": "Go",
-    "Bonjour": "Good morning",
-    "Salut": "Hello",
-    "Au revoir": "Goodbye",
-    "Merci": "Thank you",
-    "Merci beaucoup": "Thank you very much",
-    "Pardon": "Excuse me",
-    "Monsieur": "Mister",
-    "Madame": "Madam",
-    "Mademoiselle": "Miss",
-    "Bon": "Good",
-    "Grande": "Big",
-    "Petit": "Small",
-    "Un Garcon": "A Boy",
-    "Une Fille": "A Girl",
-    "Maison": "House",
-    "Lecole": "School",
-    "Voiture": "Car",
-    "Beau": "Beautiful",
-    "Travail": "Work"
+Translations = {
+    "Hello":{"Spanish": "Hola",
+             "French":"Salut",
+             "Hausa": "Sannu",
+             "Korean":"Annyeonghaseyo",
+             "Japanese":"Konnichiwa"
+             },
+    "Thankyou":{"Spanish":"Gracias",
+                "French":"Merci",
+                "Hausa":"Nagode",
+                "Korean":"Gamsahamnida",
+                "Japanese":"Arigatou",
+                },
+    "Goodbye":{"Spanish":"Adios",
+           "French":"Au revoir",
+           "Hausa":"Sai an juma",
+           "Korean":"annyeonghi gaseyo",
+           "Japanese":"Sayonara",
+           }
+"Yes":{"Spanish":"Si",
+       "French":"Oui",
+       "Hausa":"A'a",
+       "Korean":"Ne",
+       "Japanese":"Hai",
+      }
+"No":{"Spanish":"No",
+      "French":"Non",
+      "Hausa":"A'a",
+      "Korean":"Aniyo",
+      "Japanese":"Ije",
+      }
+"Excuse me":{"Spanish":"Lo siento",
+             "French":"Excusez-moi",
+             "Hausa":"Gafara",
+             "Korean":"Joheunhamnida",
+             "Japanese":"Sumimasen",
+             }
+"Tree":{"Spanish":"Arbol",
+        "French":"Arbre",
+        "Hausa":"Bishiya",
+        "Korean":"namu",
+        "Japanese":"Ki",
+         }
+"Cat":{"Spanish":"Gato",
+       "French":"Chat",
+       "Hausa":"Muskule",
+       "Korean":"Goyang-i",
+       }
+"Dog":{"Spanish":"Peru",
+       "Ffench":"Chien",
+       "Hausa":"Kare",
+       "Korean":"Gae",
+       "Japanese":"Inu",
+       }
+"Sun":{"Spanish":"sol",
+       "French":"Soliel",
+       "Hausa":"Rana",
+       "Korean":"Taeyang",
+       "Japanese":"Taiyo",
+      }
+"Moon":{"Spanish":"Luna",
+            "French":"Lune",
+            "Hausa":"Wata",
+            "Korean":"Dal",
+            "Japanese":"tsuki",
+            },
+    "Love":{"Spanish":"Amor",
+            "French":"Amour",
+            "Hausa":"Soyayya",
+            "Korean":"Sarang",
+            "Japanese":"Ai",
+            },
+    "Family":{"Spanish":"Familia",
+              "French":"Famille",
+              "Hausa":"Iyali",
+              "Korean":"Gajok",
+              "Japanese":"Kazoku",
+              },
+    "Friend":{"Spanish":"Amigo",
+              "French":"Ami",
+              "Hausa":"Aboki",
+              "Korean":"Chingu",
+              "Japanese":"Tomodachi",
+              },
+    "Big":{"Spanish":"Grande",
+           "French":"Grand",
+           "Hausa":"Babba",
+           "Korean":"Keun",
+           "Japanese":"Okii",
+           },
+    "Small":{"Spanish":"Pequeno",
+             "French":"Petit",
+             "Hausa":"Karami",
+             "Korean":"Jagi",
+             "Japanese":"Chilisai",
+             },
+    "Good":{"Spanish":"Bueno",
+            "French":"Bon",
+            "Hausa":"Mai kyau",
+            "Korean":"Joh-eun",
+            "Japanese":"Waruii",
+            },
+    "Bad":{"Spanish":"Malo",
+           "French":"Mauvais",
+           "Hausa":"Mara kyau",
+           "Korean":"Nappeun",
+           "Japanese":"Warui",
+           },
+    "Beautiful":{"Spanish":"Hermosa",
+                 "French":"Beau",
+                 "Hausa":"Mai kyau",
+                 "Korean":"Areumdaun",
+                 },
+    "House":{"Spanish":"Casa",
+             "French":"Maison",
+             "Hausa":"Gida",
+             "Korean":"Jip",
+             "Japanese":"Ie", }
 }
 
-def search(word):
-    if word in Spanish_dictionary:
-        result.set(Spanish_dictionary[word])
-        print(Spanish_dictionary[word])
+Label(window, text="Enter a word:").pack()
+input_entry = Entry(window)
+input_entry.pack()
 
+def show_translations():
+    """"
+    Fetches the translations of the input word from the dictionary and displays them.
+   """
+    word = input_entry.get().capitalize()
+    if word in Translations:
+        translations = Translations[word]
+        result.set("\n".join([f"{lang}: {trans}" for lang, trans in translations.items()]))
     else:
-        result.set("Not found")
-        print("Not found")
+        result.set("Word not found in dictionary")
 
-def search(word):
-    if word in French_Dictionary:
-        result.set(French_Dictionary[word])
-        print(French_Dictionary[word])
-
-    else:
-        result.set("Not found")
-        print("Not found")
-
-
-search_btn =Button(window,text = "search", command=lambda:search(entry_text.get()))
-search_btn.pack()
+Button(window, text="Show Translations", command=show_translations).pack()
 window.mainloop()
+
 
