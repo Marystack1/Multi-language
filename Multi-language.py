@@ -35,48 +35,48 @@ Translations = {
            "Hausa":"Sai an juma",
            "Korean":"annyeonghi gaseyo",
            "Japanese":"Sayonara",
-           }
+           },
 "Yes":{"Spanish":"Si",
        "French":"Oui",
        "Hausa":"A'a",
        "Korean":"Ne",
        "Japanese":"Hai",
-      }
+      },
 "No":{"Spanish":"No",
       "French":"Non",
       "Hausa":"A'a",
       "Korean":"Aniyo",
       "Japanese":"Ije",
-      }
+      },
 "Excuse me":{"Spanish":"Lo siento",
              "French":"Excusez-moi",
              "Hausa":"Gafara",
              "Korean":"Joheunhamnida",
              "Japanese":"Sumimasen",
-             }
+             },
 "Tree":{"Spanish":"Arbol",
         "French":"Arbre",
         "Hausa":"Bishiya",
         "Korean":"namu",
         "Japanese":"Ki",
-         }
+         },
 "Cat":{"Spanish":"Gato",
        "French":"Chat",
        "Hausa":"Muskule",
        "Korean":"Goyang-i",
-       }
+       },
 "Dog":{"Spanish":"Peru",
        "Ffench":"Chien",
        "Hausa":"Kare",
        "Korean":"Gae",
        "Japanese":"Inu",
-       }
+       },
 "Sun":{"Spanish":"sol",
        "French":"Soliel",
        "Hausa":"Rana",
        "Korean":"Taeyang",
        "Japanese":"Taiyo",
-      }
+      },
 "Moon":{"Spanish":"Luna",
             "French":"Lune",
             "Hausa":"Wata",
@@ -142,9 +142,6 @@ input_entry = Entry(window)
 input_entry.pack()
 
 def show_translations():
-    """"
-    Fetches the translations of the input word from the dictionary and displays them.
-   """
     word = input_entry.get().capitalize()
     if word in Translations:
         translations = Translations[word]
